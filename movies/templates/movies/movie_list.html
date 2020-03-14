@@ -1,0 +1,17 @@
+{% extends "movies/base.html" %}
+
+{% block content %}
+    <h2>Movies</h2>
+    <dl>
+        {% for movie in object_list %}
+            <dt>
+                <a href="{% url 'movies:detail' movie.id %}">
+                    {{ movie.id }}
+                </a>
+            </dt>
+            <dd>{{ movie.dvd_id }}</dd>
+            <dd>{{ movie.title }}</dd>
+            <dd>{{ movie.release_date }}</dd>
+        {% endfor %}
+    </dl>
+{% endblock %}
