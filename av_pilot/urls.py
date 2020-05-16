@@ -16,10 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from movies.views import MovieFormSetView
-
 urlpatterns = [
-    path('movies/', include('movies.urls')),
+    path('', include('collection.urls')),
+    path('filter', include('filter.urls')),
     path('admin/', admin.site.urls),
-    path('', MovieFormSetView.as_view())
 ]
